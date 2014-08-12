@@ -1,7 +1,13 @@
 {
-	"dependencies": {
-		"express": "4.x",
-		"jade": "1.x",
-		"body-parser": "1.x"
-	}
+  "dependencies": {
+    "angular": "^1.2.19",
+    "body-parser": "1.x",
+    "express": "4.x",
+    "jade": "1.x",
+    "johnny-five": "^0.8.2",
+    "passport": "^0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
