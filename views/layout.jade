@@ -1,9 +1,10 @@
 doctype html
 html(lang='en')
 	head
-		meta(charset="utf-8")
-		title Untitled
-
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+		title Zoomable Frame
+		link(rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css")
+		link(rel="stylesheet" type="text/css" href="main.css")
 	body
 		block content
 
@@ -13,9 +14,15 @@ html(lang='en')
 
 			script(src="http://hammerjs.github.io/dist/hammer.min.js")
 
+			script(src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js')
+
+			script(src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js')
+
 			script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenLite.min.js")
+			script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TimelineLite.min.js")
 			script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js")
 			script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/plugins/CSSPlugin.min.js")
 
 				
 		block client scripts
+			script(src="/scripts/client.js")
