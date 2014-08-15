@@ -1,7 +1,7 @@
 $(document).on('ready', function() {
 
 	$('.frame').append(Joystick.joystickTemplate);
-	$('.cntrl').append(cntrlFeaturesTemplate);
+	$('.cntrl').append(Controls.cntrlFeaturesTemplate);
 
 	workTable.setSizes();
 
@@ -10,12 +10,6 @@ $(document).on('ready', function() {
 
 	};
 	scalerText();
-
-	cntrl.sizeCntrl('small');
-	cntrl.sizeCntrl('medium-small');
-	cntrl.sizeCntrl('medium');
-	cntrl.sizeCntrl('medium-large');
-	cntrl.sizeCntrl('large');
 
 	// ____________________________________________________ scale work-table with slider
 	$(document).on('input', '#scale-slide', function() {
@@ -46,5 +40,12 @@ $(document).on('ready', function() {
 	})
 
 
-
+// ____________________________________________________________ END OF DOC ON
 })
+
+
+
+
+
+
+

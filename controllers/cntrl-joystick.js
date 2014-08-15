@@ -1,27 +1,21 @@
 console.log('cntrl-joystick start');
-// // ______________________________________________________ JQUERY FINDS and DIMS
-		// var parentBoxClass = $('.cntrl-box').closest('.cntrl');
-		// var parentBoxWidth = $('.jystk').closest('.cntrl').width();
-		// var parentBoxHeight = $('.jystk').closest('.cntrl').height();
-		// var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
-		// var cntrlBoxHeight = parentBoxHeight - (workTable.sizes.cellSize * 3);
-
 
 
 // _________________________________________________________________ JOYSTICK OBJECT	
 var Joystick =  {
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
-	joystickTemplate:
-		$("<div class='cntrl cntrl-sm'>" +
+	joystickTemplate: $(
+		"<div class='cntrl'>" +
 			"<div class='cntrl-box'>" +
 				"<div class='jystk-bounds'>" +
-					"<div class='jystk'>" +
+					"<div class='cntrl-jystk cntrl-jystk-menu'>" +
 						"<div class='jystk-style'></div>" +
 					"</div>" +
 				"</div>" +
 			"</div>" +
-		"</div>"),
+		"</div>"
+	),
 
 	// ______________________________________________________ JOYSTICK BOUNDS
 	boundsStyleAndSize: function() {
@@ -118,4 +112,5 @@ var Joystick =  {
 		});
 	}
 
+// __________________________________________________ END JOYSTICK CONSTRUCTOR
 }
