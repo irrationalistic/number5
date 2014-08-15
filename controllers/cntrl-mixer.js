@@ -1,4 +1,4 @@
-
+console.log('cntrl-mixer start');
 // ________________________________________________________ MIXER TEMPLATE
 var cntrlMixerTemplate = 
 $(	"<div class='mixer'>" +

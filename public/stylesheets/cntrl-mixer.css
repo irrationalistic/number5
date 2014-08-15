@@ -1,5 +1,11 @@
-
-/*_________________________________________________________________ info-stream */
+.cntrl-mixer {
+	height: 5%;
+	width: 15%;
+}
+.cntrl-mixer-module {
+	height: 2.5%;
+	width: 2.5%;
+}
 
 
 
@@ -40,3 +46,9 @@
 	color: yellow;
 	overflow: hidden;
 }
+
+
+
+
+
+

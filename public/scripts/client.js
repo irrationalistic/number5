@@ -1,6 +1,6 @@
 $(document).on('ready', function() {
 
-	$('.frame').append(joystickTemplate);
+	$('.frame').append(Joystick.joystickTemplate);
 	$('.cntrl').append(cntrlFeaturesTemplate);
 
 	workTable.setSizes();
@@ -16,8 +16,6 @@ $(document).on('ready', function() {
 	cntrl.sizeCntrl('medium');
 	cntrl.sizeCntrl('medium-large');
 	cntrl.sizeCntrl('large');
-
-	joystick();
 
 	// ____________________________________________________ scale work-table with slider
 	$(document).on('input', '#scale-slide', function() {
