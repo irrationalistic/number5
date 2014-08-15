@@ -2,9 +2,19 @@ doctype html
 html(lang='en')
 	head
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
-		title Zoomable Frame
+		title Number 5 is ALIVE!!
 		link(rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css")
-		link(rel="stylesheet" type="text/css" href="main.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-button.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-controls.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-joystick.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-knob.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-meter.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-mixer.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/cntrl-switch.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/no5-main.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/no5-login.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/no5-work-space.css")
+		
 	body
 		block content
 
@@ -12,9 +22,9 @@ html(lang='en')
 		block init scripts
 			script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 
-			script(src="http://hammerjs.github.io/dist/hammer.min.js")
+			script(src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js")
 
-			script(src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js')
+			script(src="http://hammerjs.github.io/dist/hammer.min.js")
 
 			script(src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js')
 
@@ -26,3 +36,11 @@ html(lang='en')
 				
 		block client scripts
 			script(src="/scripts/client.js")
+			script(src="/cntrl-button.js")
+			script(src="/cntrl-controls.js")
+			script(src="/cntrl-joystick.js")
+			script(src="/cntrl-knob.js")
+			script(src="/cntrl-meter.js")
+			script(src="/cntrl-mixer.js")
+			script(src="/cntrl-switch.js")
+			script(src="/no5-workspace.js")

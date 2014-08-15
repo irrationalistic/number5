@@ -1,10 +1,13 @@
 
-// ______________________________________________________________________
+
+
+// __________________________________________________________ REQUIRES
 var express = require('express');
 var bodyParser = require('body-parser');
 
 
-// ______________________________________________________________________
+
+// __________________________________________________________ PASSPORT
 
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
@@ -40,21 +43,29 @@ var passport = require('passport')
 
 
 
-// ______________________________________________________________________
+// __________________________________________________________ EXPRESS: USE
 
 var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/controllers'));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+
+
+// __________________________________________________________ PAGE REQUESTS
 app.get('/', function(req, res) {
-	res.render('index');
+	res.render('no5-login');
+});
+
+app.get('/work-space', function(req, res) {
+	res.render('no5-workspace');
 });
 
 
 
-// _____________________________________________________________________
+// __________________________________________________________ PASSPORT GOOGLE
 
 // // Redirect the user to Google for authentication.  When complete, Google
 // // will redirect the user back to the application at
@@ -80,7 +91,8 @@ app.get('/', function(req, res) {
 // ));
 
 
-// ______________________________________________________________________
+
+// __________________________________________________________ START SERVER
 var server = app.listen(3705, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

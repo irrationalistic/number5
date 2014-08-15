@@ -1,0 +1,62 @@
+/*__________________________________________________________________ menu and app */
+
+.frame {
+	z-index: 1000;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 15%;
+	background-color: rgba(30, 30, 30, 0.85);
+}
+
+.bar-test {
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 100, 45, 0.95);
+}
+
+.scaler {
+	position: fixed;
+	bottom: 15%;
+	left: 0;
+	padding: 5px;
+	background-color: rgba(250, 250, 250, 0.7);
+}
+
+#scale-slide {
+	margin: 5px;
+}
+
+#scale-text {
+	font-size: 12px;
+}
+
+/*__________________________________________________________________ work table */
+.work-table {
+	left: 0;
+	top: 0;
+	position: absolute;
+	background-color: rgba(30, 30, 60, 1);
+	margin-bottom: 5%;
+}
+
+.work-table-column {
+	/*border-left: 1px solid gray;*/
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+.work-table-row {
+	/*border-top: 1px solid gray;*/
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
