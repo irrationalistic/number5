@@ -3,6 +3,9 @@ console.log('cntrl-joystick start');
 
 // _________________________________________________________________ JOYSTICK OBJECT	
 var Joystick =  {
+	create: function() {
+		Controls.call();
+	},
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
 	joystickTemplate: $(
@@ -16,6 +19,8 @@ var Joystick =  {
 			"</div>" +
 		"</div>"
 	),
+
+
 
 	// ______________________________________________________ JOYSTICK BOUNDS
 	boundsStyleAndSize: function() {
@@ -113,4 +118,12 @@ var Joystick =  {
 	}
 
 // __________________________________________________ END JOYSTICK CONSTRUCTOR
-}
+};
+
+Joystick.prototype = new Controls();
+Joystick.prototype.constructor = Joystick;
+
+
+
+
+

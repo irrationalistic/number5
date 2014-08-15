@@ -1,6 +1,10 @@
 console.log('cntrl-switch start');
 
 var Switch = {
+	create: function() {
+		Controls.call();
+	},
+
 	switchTemplate: $(
 		"<div class='cntrl'>" +
 			"<div class='cntrl-box'>" +
@@ -23,3 +27,6 @@ var Switch = {
 
 // ________________________________________________ END OF SWITCH CONSTRUCTOR
 }
+
+Switch.prototype = new Controls;
+Switch.prototype.constructor = Switch;

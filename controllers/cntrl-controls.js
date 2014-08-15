@@ -1,26 +1,32 @@
 console.log('cntrl-controls start');
 	
 
-var Controls = {
+var Controls = function() {
 	// __________________________________________________________________________ FEATURES TEMPLATE
-	cntrlFeaturesTemplate:
-		$("<div class='cntrl-antenna'>" +
-			"<div class='cntrl-antenna-dot'></div>" +
-			"<div class='cntrl-antenna-stalk'></div>" +
-			"<div class='cntrl-antenna-lg-plate'></div>" +
-		"</div>" +
+	this.render = function() {
+		this.el = 
+			$("<div class='cntrl-antenna'>" +
+				"<div class='cntrl-antenna-dot'></div>" +
+				"<div class='cntrl-antenna-stalk'></div>" +
+				"<div class='cntrl-antenna-lg-plate'></div>" +
+			"</div>" +
 
-		"<div class='status-light'></div>" +
+			"<div class='status-light'></div>" +
 
-		"<div class='cntrl-grip'>" +
-			"<div class='cntrl-grip-texture'></div>" +
-		"</div>" +
+			"<div class='cntrl-grip'>" +
+				"<div class='cntrl-grip-texture'></div>" +
+			"</div>" +
 
-		"<div class='cntrl-label'>" +
-			"<input type='text' placeholder='Control Label'>" +
-		"</div>"),
+			"<div class='cntrl-label'>" +
+				"<input type='text' placeholder='Control Label'>" +
+			"</div>");
+		// this.el.on('click', function() {
+		// 	console.log('fuck this!');
+		// }
+		// $('.cntrl').append(this.el);
+	};
 
-	cntrlInteriorSizes: function() {
+	this.cntrlInteriorSizes = function() {
 	$('.cntrl').css({
 					'padding-top': workTable.sizes.cellSize * 2
 					});
@@ -28,14 +34,9 @@ var Controls = {
 						'width':  cntrlBoxWidth + 'px',
 						'height': cntrlBoxHeight + 'px'
 						});
-	},
-
-	addCntrl: function(size) {
-			$('.app-space').append($('<div class="cntrl cntrl-early">'));
-			this.sizeCntrl(size);
-	},
+	};
 		
-	dragCntrl: function(self) {
+	this.dragCntrl = function(self) {
 		var thisCntrl = self.closest('.cntrl');
 		var controlDrag = '';
 		controlDrag = Draggable.create(thisCntrl, {
@@ -95,12 +96,13 @@ var Controls = {
 				controlDrag = '';
 			},	
 		});
-	}
+	};
 
 
 
 // ________________________________________ END CONTROLS CONSTRUCTOR
 }
+
 
 
 

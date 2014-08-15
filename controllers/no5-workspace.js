@@ -39,7 +39,7 @@ var workTable = {
 			'height': this.sizes.workTableHeight
 		});
 
-		var scalerMin = (Math.floor((this.sizes.viewWidth / this.sizes.workTableWidth) * 10000) / 10000);
+		var scalerMin = (Math.ceil((this.sizes.viewWidth / this.sizes.workTableWidth + 0.05) * 10000) / 10000);
 		$('#scale-slide').attr('min', scalerMin);
 		
 		this.buildGrid();
