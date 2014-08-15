@@ -1,7 +1,7 @@
 $(document).on('ready', function() {
 
-	// $('body').append('<h1>What the hell!</h1>');
-
+	$('.frame').append(joystickTemplate);
+	$('.cntrl').append(cntrlFeaturesTemplate);
 
 	workTable.setSizes();
 
@@ -17,7 +17,7 @@ $(document).on('ready', function() {
 	cntrl.sizeCntrl('medium-large');
 	cntrl.sizeCntrl('large');
 
-	cntrl.joystick();
+	joystick();
 
 	// ____________________________________________________ scale work-table with slider
 	$(document).on('input', '#scale-slide', function() {

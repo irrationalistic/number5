@@ -59,7 +59,7 @@ app.get('/', function(req, res) {
 	res.render('no5-login');
 });
 
-app.get('/work-space', function(req, res) {
+app.get('/workspace', function(req, res) {
 	res.render('no5-workspace');
 });
 

@@ -1,5 +1,20 @@
-// __________________________________________________________________________________________ Joystick
-	joystick: function() {
+
+
+// _________________________________________________________________ JOYSTICK TEMPLATE
+	var joystickTemplate =
+	$(		"<div class='cntrl cntrl-sm'>" +
+				"<div class='cntrl-box'>" +
+					"<div class='jystk-bounds'>" +
+						"<div class='jystk'>" +
+							"<div class='jystk-style'></div>" +
+						"</div>" +
+					"</div>" +
+				"</div>" +
+			"</div>");
+
+
+	// _________________________________________________________________ JOYSTICK OBJECT	
+	var joystick =  function() {
 		var parentBoxClass = $('.cntrl-box').closest('.cntrl');
 		var parentBoxWidth = $('.jystk').closest('.cntrl').width();
 		var parentBoxHeight = $('.jystk').closest('.cntrl').height();

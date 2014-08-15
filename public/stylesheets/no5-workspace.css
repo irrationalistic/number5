@@ -23,6 +23,7 @@
 }
 
 .scaler {
+	z-index: 2000;
 	position: fixed;
 	bottom: 15%;
 	left: 0;
@@ -48,14 +49,14 @@
 }
 
 .work-table-column {
-	/*border-left: 1px solid gray;*/
+	border-left: 1px solid gray;
 	position: absolute;
 	height: 100%;
 	top: 0;
 }
 
 .work-table-row {
-	/*border-top: 1px solid gray;*/
+	border-top: 1px solid gray;
 	position: absolute;
 	width: 100%;
 	left: 0;

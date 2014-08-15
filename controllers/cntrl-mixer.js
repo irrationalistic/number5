@@ -1,3 +1,19 @@
+
+// ________________________________________________________ MIXER TEMPLATE
+var cntrlMixerTemplate = 
+$(	"<div class='mixer'>" +
+		"<div class='mixer-box'>" +
+		"</div>" +
+	"</div>");
+
+var cntrlMixerModuleTemplate = 
+$(	"<div class='mixer-module'>" +
+		"<div class='mixer-light'></div>" +
+		"<div class='info-stream'></div>" +
+	"</div>");
+
+
+
 // _____________________________________________________________________________________________ Mixer
 var mixerBoxWidth = workTable.sizes.gridSpacing * 6 - (workTable.sizes.cellSize * 2);
 var mixerBoxHeight = workTable.sizes.gridSpacing * 2 - (workTable.sizes.cellSize * 3);

@@ -1,3 +1,23 @@
+
+
+// __________________________________________________________________________ FEATURES TEMPLATE
+var cntrlFeaturesTemplate = 
+	$("<div class='cntrl-antenna'>" +
+		"<div class='cntrl-antenna-dot'></div>" +
+		"<div class='cntrl-antenna-stalk'></div>" +
+		"<div class='cntrl-antenna-lg-plate'></div>" +
+	"</div>" +
+
+	"<div class='status-light'></div>" +
+
+	"<div class='cntrl-grip'>" +
+		"<div class='cntrl-grip-texture'></div>" +
+	"</div>" +
+
+	"<div class='cntrl-label'>" +
+		"<input type='text' placeholder='Control Label'>" +
+	"</div>");
+
 // ____________________________________________________________________________________ controls
 var cntrl = {
 	addCntrl: function(size) {
