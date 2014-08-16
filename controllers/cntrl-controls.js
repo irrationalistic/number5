@@ -2,28 +2,25 @@ console.log('cntrl-controls start');
 	
 
 var Controls = function() {
-	// __________________________________________________________________________ FEATURES TEMPLATE
-	this.render = function() {
-		this.el = 
-			$("<div class='cntrl-antenna'>" +
-				"<div class='cntrl-antenna-dot'></div>" +
-				"<div class='cntrl-antenna-stalk'></div>" +
-				"<div class='cntrl-antenna-lg-plate'></div>" +
-			"</div>" +
 
-			"<div class='status-light'></div>" +
+	this.features = function() {
+		return $(
+					"<div class='cntrl-antenna'>" +
+						"<div class='cntrl-antenna-dot'></div>" +
+						"<div class='cntrl-antenna-stalk'></div>" +
+						"<div class='cntrl-antenna-lg-plate'></div>" +
+					"</div>" +
 
-			"<div class='cntrl-grip'>" +
-				"<div class='cntrl-grip-texture'></div>" +
-			"</div>" +
+					"<div class='status-light'></div>" +
 
-			"<div class='cntrl-label'>" +
-				"<input type='text' placeholder='Control Label'>" +
-			"</div>");
-		// this.el.on('click', function() {
-		// 	console.log('fuck this!');
-		// }
-		// $('.cntrl').append(this.el);
+					"<div class='cntrl-grip'>" +
+						"<div class='cntrl-grip-texture'></div>" +
+					"</div>" +
+
+					"<div class='cntrl-label'>" +
+						"<input type='text' placeholder='Control Label'>" +
+					"</div>"
+				);
 	};
 
 	this.cntrlInteriorSizes = function() {

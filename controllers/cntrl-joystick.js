@@ -6,8 +6,10 @@ var Joystick = function() {
 	var self = this;
 	this.create = function() {
 		Controls.call();
+		// console.log('control test: ' + Controls);
 		this.$el = self.joystickTemplate;
-		$el.appendTo($('.frame'));
+		this.$el.appendTo($('#joystick-holder'));
+		this.$el.append(this.features());
 	};
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
@@ -21,7 +23,7 @@ var Joystick = function() {
 				"</div>" +
 			"</div>" +
 		"</div>"
-	),
+	);
 
 	// ______________________________________________________ JOYSTICK BOUNDS
 	this.boundsStyleAndSize = function() {
@@ -47,7 +49,7 @@ var Joystick = function() {
 								'width': jystkStyleSize + 'px',
 								'height': jystkStyleSize + 'px'
 								});
-	},
+	};
 
 	// _______________________________________________________ INFO STREAM
 	this.infoStreamText = function(chgX, chgY) {
@@ -56,12 +58,12 @@ var Joystick = function() {
 		$('.info-stream').scrollTop(textScrollHeight - textHeight);
 
 		$('.info-stream').append('Y: <b>' + chgY + '</b><sub>%</sub> X: <b>' + chgX + '<sub>%</sub></b><br>');
-	},
+	};
 
 	// _______________________________________________________ BOUNCEBACK ANIMATION
 	this.bounceBack =  function() {
 		return TweenLite.to($('.jystk'), 0.185, {css:{'transform': ''}, ease: Bounce.easeOut});
-	},
+	};
 
 	// _______________________________________________________ DRAGGABLE
 	this.moveStick = function() {
@@ -116,21 +118,15 @@ var Joystick = function() {
 				infoStreamText(changeX, changeY);
 			}
 		});
-	}
+	};
 
-// __________________________________________________ END JOYSTICK CONSTRUCTOR
+	this.create();
 };
-
-
-var joystick1 = new Joystick();
-
-console.log(joystick1.joystickTemplate);
-$('.frame').append(joystick1.joystickTemplate);
 
 Joystick.prototype = new Controls();
 Joystick.prototype.constructor = Joystick;
 
-
+// __________________________________________________ END JOYSTICK CONSTRUCTOR
 
 
 

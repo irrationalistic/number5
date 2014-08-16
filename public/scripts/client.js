@@ -1,28 +1,26 @@
+
+
 $(document).on('ready', function() {
 
-	$('.frame').append(Joystick.joystickTemplate);
-	$('.cntrl').append(Controls.cntrlFeaturesTemplate);
-
+// ________________________________________________________________________________
 	workTable.setSizes();
 
-	var scalerText = function() {
-		$('#scale-text').text(parseInt(($('#scale-slide').val() * 100)) + '%');
+	var joystick1 = new Joystick();
 
-	};
-	scalerText();
+
+
+// ________________________________________________________________________________
 
 	// ____________________________________________________ scale work-table with slider
 	$(document).on('input', '#scale-slide', function() {
 		var sliderVal = $(this).val();
 		workTable.updateSizes(sliderVal);
-		scalerText();
 	});
 
 	// ______________________________________ update variables and log changes to window size
 	$(window).on('resize', function() {
 		var sliderVal = $('#scale-slide').val();
 		workTable.updateSizes(sliderVal);
-		scalerText();
 	});
 	
 	// ________________________________________________________ Draggable for controls

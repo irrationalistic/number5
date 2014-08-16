@@ -52,6 +52,16 @@ var workTable = {
 			left: 0.00000
 		});
 
+		var scalerText = function() {
+			$('#scale-text').text(Math.round(($('#scale-slide').val() * 100)) + '%');
+
+		}();
+
+		var squareMenuHolders = function() {
+			var controlHolderWidth = $('.control-holder').width();
+			$('.control-holder').css('height', controlHolderWidth);		
+		}();
+
 	},
 
 	updateSizes: function(val) {
@@ -147,13 +157,9 @@ var workTable = {
 // 			},	
 // 		});
 
-$(document).on('ready', function() {
-	var controlHolderHeight = $('.control-holder').height();
-	var controlHolderWidth = controlHolderHeight * 1.111;
-	console.log('height: ' + controlHolderHeight);
-	console.log('width: ' + controlHolderWidth);
-	$('.control-holder').css('width', controlHolderWidth);
-})
+
+	
+
 
 
 
