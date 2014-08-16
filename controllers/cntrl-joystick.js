@@ -124,7 +124,7 @@ var Joystick = function() {
 
 var joystick1 = new Joystick();
 
-console.log(joystick1.create);
+// console.log(joystick1.create);
 
 Joystick.prototype = new Controls();
 Joystick.prototype.constructor = Joystick;

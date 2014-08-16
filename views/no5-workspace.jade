@@ -4,6 +4,11 @@ block head links
 	link(rel="stylesheet" type="text/css" href="/stylesheets/no5-workspace.css")
 
 block content
+	div.logo-and-user
+		img(src="http://www.msvu.ca/site/media/msvu/Project%20Twenty12%20small%20logo(1).jpg")
+		div.user-greeting
+			label.user-label Hello:
+			p.username Patrick
 	form.scaler
 		input#scale-slide(type='range' name='scaler' value='0.8' max='2.05' step='0.05')
 		label#scale-text

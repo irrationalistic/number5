@@ -30,6 +30,42 @@
 	font-size: 12px;
 }
 
+/*________________________________________________________________  LOGO AND USERNAME */
+.logo-and-user {
+	position: fixed;
+	left: 5px;
+	top: 5px;
+	width: 15%;	
+	z-index: 4000;
+}
+
+
+.logo-and-user img{
+	width: 100%;
+	margin: 0;
+}
+
+.user-greeting {
+	padding: 0;
+	margin: 0;
+	line-height: 0;
+}
+
+.user-label {
+	font-style: italic;
+	margin: 0 3px 0 6px;
+	font-size: 9px;
+	color: rgb(150, 150, 150);
+}
+.username {
+	font-size: 11px;
+	display: inline-block;
+	margin: 0;
+	line-height: 10px;
+	color: rgb(90, 90, 90);
+}
+
+
 /*__________________________________________________________________ work table */
 .work-table {
 	left: 0;

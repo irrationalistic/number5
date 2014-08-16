@@ -57,9 +57,15 @@ app.get('/', function(req, res) {
 	res.render('no5-login');
 });
 
+app.post('/login', function(req, res) {
+  res.redirect('/workspace');
+});
+
 app.get('/workspace', function(req, res) {
 	res.render('no5-workspace');
 });
+
+
 
 
 

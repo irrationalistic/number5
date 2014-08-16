@@ -9,7 +9,7 @@ block content
 		div.login-logo
 			img(src="http://www.msvu.ca/site/media/msvu/Project%20Twenty12%20small%20logo(1).jpg")
 		p.login-prompt Who Are You?
-		form.login-form(method='post')
+		form.login-form(method='post' action='/login')
 			p.label-holder
 				label.login-label Username: 
 			input.login-username(type='email' placeholder='YourEmail@YourURL.com...')
@@ -20,3 +20,6 @@ block content
 			button.login-submit(type='submit') Login
 	div.work-table
 	div.frame
+
+block client scripts
+	script(src="/no5-login.js")
