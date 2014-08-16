@@ -75,3 +75,11 @@ $(document).on('click', '.big-stream', function() {
 	$(this).removeClass('big-stream');
 })
 
+
+
+
+
+
+
+console.log('-- cntrl-mixer END');
+

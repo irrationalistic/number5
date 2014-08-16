@@ -1,6 +1,5 @@
 
 
-
 // __________________________________________________________ REQUIRES
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -53,7 +52,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-
 // __________________________________________________________ PAGE REQUESTS
 app.get('/', function(req, res) {
 	res.render('no5-login');
@@ -91,12 +89,10 @@ app.get('/workspace', function(req, res) {
 // ));
 
 
-
 // __________________________________________________________ START SERVER
 var server = app.listen(3705, function() {
-	console.log('Express server listening on port ' + server.address().port);
+  console.log('Express server listening on port ' + server.address().port);
 });
-
 
 
 

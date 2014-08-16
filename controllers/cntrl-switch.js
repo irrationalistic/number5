@@ -30,3 +30,12 @@ var Switch = {
 
 Switch.prototype = new Controls;
 Switch.prototype.constructor = Switch;
+
+
+
+
+
+
+
+console.log('-- cntrl-switch END');
+

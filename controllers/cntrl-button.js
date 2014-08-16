@@ -36,3 +36,7 @@ var Bttn = {
 
 Bttn.prototype = new Controls;
 Bttn.prototype.constructor = Bttn;
+
+
+
+console.log('-- cntrl-button END');

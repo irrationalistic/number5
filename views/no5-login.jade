@@ -4,12 +4,11 @@ block head links
 	link(rel="stylesheet" type="text/css" href="/stylesheets/no5-login.css")
 
 block content
-block content
 	div.gray-out
 	div.login-modal
 		div.login-logo
 			img(src="http://www.msvu.ca/site/media/msvu/Project%20Twenty12%20small%20logo(1).jpg")
-		p.login-prompt Please Login
+		p.login-prompt Who Are You?
 		form.login-form(method='post')
 			p.label-holder
 				label.login-label Username: 
@@ -17,4 +16,7 @@ block content
 			br
 			p.label-holder
 				label.login-label Password: 
-			input.login-password(type='text' placeholder='Your password...')
+			input.login-password(type='password' placeholder='Your password...')
+			button.login-submit(type='submit') Login
+	div.work-table
+	div.frame

@@ -6,9 +6,9 @@ var Meter = {
 	},
 
 	meterTemplate: $(
-		"<div class='cntrl'>" +
+		"<div class='cntrl cntrl-meter-menu cntrl-meter'>" +
 			"<div class='cntrl-box'>" +
-					"<div class='cntrl-meter cntrl-meter-menu'>" +
+					"<div class='meter'>" +
 						"<div class='meter-style'></div>" +
 					"</div>" +
 			"</div>" +
@@ -28,3 +28,13 @@ var Meter = {
 
 Meter.prototype = new Controls;
 Meter.prototype.constructor = Meter;
+
+
+
+
+
+
+
+console.log('-- cntrl-meter END');
+
+

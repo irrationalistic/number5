@@ -6,10 +6,10 @@ var Knob = {
 	},
 
 	knobTemplate: $(
-		"<div class='cntrl'>" +
+		"<div class='cntrl cntrl-knob-menu cntrl-knob'>" +
 			"<div class='cntrl-box'>" +
 				"<div class='cntrl-knob-bounds>" +
-					"<div class='cntrl-knob cntrl-knob-menu'>" +
+					"<div class='knob'>" +
 						"<div class='knob-style'></div>" +
 					"</div>" +
 				"</div>" +
@@ -30,3 +30,14 @@ var Knob = {
 
 Knob.prototype = new Controls;
 Knob.prototype.constructor = Knob;
+
+
+
+
+
+
+
+
+console.log('-- cntrl-knob END');
+
+

@@ -2,17 +2,20 @@ console.log('cntrl-joystick start');
 
 
 // _________________________________________________________________ JOYSTICK OBJECT	
-var Joystick =  {
-	create: function() {
+var Joystick = function() {
+	var self = this;
+	this.create = function() {
 		Controls.call();
-	},
+		this.$el = self.joystickTemplate;
+		$el.appendTo($('.frame'));
+	};
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
-	joystickTemplate: $(
-		"<div class='cntrl'>" +
+	this.joystickTemplate = $(
+		"<div class='cntrl cntrl-jystk-menu cntrl-jytsk'>" +
 			"<div class='cntrl-box'>" +
 				"<div class='jystk-bounds'>" +
-					"<div class='cntrl-jystk cntrl-jystk-menu'>" +
+					"<div class='jystk'>" +
 						"<div class='jystk-style'></div>" +
 					"</div>" +
 				"</div>" +
@@ -20,10 +23,8 @@ var Joystick =  {
 		"</div>"
 	),
 
-
-
 	// ______________________________________________________ JOYSTICK BOUNDS
-	boundsStyleAndSize: function() {
+	this.boundsStyleAndSize = function() {
 		var boundsSize = Math.ceil(cntrlBoxWidth * 0.88);
 		if(boundsSize % 2 != 0) {
 			boundsSize --
@@ -49,7 +50,7 @@ var Joystick =  {
 	},
 
 	// _______________________________________________________ INFO STREAM
-	infoStreamText: function(chgX, chgY) {
+	this.infoStreamText = function(chgX, chgY) {
 		var textScrollHeight = $('.info-stream')[0].scrollHeight;
 		var textHeight = $('.info-stream').height();
 		$('.info-stream').scrollTop(textScrollHeight - textHeight);
@@ -58,12 +59,12 @@ var Joystick =  {
 	},
 
 	// _______________________________________________________ BOUNCEBACK ANIMATION
-	bounceBack: function() {
+	this.bounceBack =  function() {
 		return TweenLite.to($('.jystk'), 0.185, {css:{'transform': ''}, ease: Bounce.easeOut});
 	},
 
 	// _______________________________________________________ DRAGGABLE
-	moveStick: function() {
+	this.moveStick = function() {
 		Draggable.create($('.jystk'), {
 			type:'x,y',
 			bounds: $('.jystk-bounds'),
@@ -120,6 +121,11 @@ var Joystick =  {
 // __________________________________________________ END JOYSTICK CONSTRUCTOR
 };
 
+
+var joystick1 = new Joystick();
+
+console.log(joystick1.create);
+
 Joystick.prototype = new Controls();
 Joystick.prototype.constructor = Joystick;
 
@@ -127,3 +133,4 @@ Joystick.prototype.constructor = Joystick;
 
 
 
+console.log('-- cntrl-joystick END');
