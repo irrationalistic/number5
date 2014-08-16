@@ -9,7 +9,7 @@
 	height: 15%;
 	background-color: rgb(166, 74, 45);
 	box-shadow: 0 0px 4px 3px rgba(20, 20, 20, 0.3);
-	padding: 10px 15px 0 15px;
+	padding: 10px 35px 0 35px;
 }
 
 .scaler {
@@ -152,8 +152,18 @@
 	background-color: green;
 }
 
+.control-holder {
+	height: 90%;
+	display: inline-block;
+	background-color: green;
+	margin: 0 2% 0 2%;
+}
 
+.trash-can {
+	width: 30px;
+	height: 30px;
 
+}
 
 
 
