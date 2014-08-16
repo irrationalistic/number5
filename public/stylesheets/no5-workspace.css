@@ -9,6 +9,7 @@
 	height: 15%;
 	background-color: rgb(166, 74, 45);
 	box-shadow: 0 0px 4px 3px rgba(20, 20, 20, 0.3);
+	padding: 10px 15px 0 15px;
 }
 
 .scaler {
@@ -76,14 +77,14 @@
 }
 
 .work-table-column {
-	border-left: 1px dotted gray;
+	border-left: 1px dotted rgb(20, 20, 20);
 	position: absolute;
 	height: 100%;
 	top: 0;
 }
 
 .work-table-row {
-	border-top: 1px dotted gray;
+	border-top: 1px dotted rgb(20, 20, 20);
 	position: absolute;
 	width: 100%;
 	left: 0;
@@ -143,7 +144,13 @@
 
 
 
-
+/*________________________________________________ tests */
+.test-thang {
+	width: 10%;
+	height: 80%;
+	display: inline-block;
+	background-color: green;
+}
 
 
 

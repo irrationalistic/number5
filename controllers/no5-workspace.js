@@ -39,7 +39,7 @@ var workTable = {
 			'height': this.sizes.workTableHeight
 		});
 
-		var scalerMin = (Math.ceil((this.sizes.viewWidth / this.sizes.workTableWidth + 0.05) * 10000) / 10000);
+		var scalerMin = (Math.ceil((this.sizes.viewWidth / this.sizes.workTableWidth + 0.01) * 10000) / 10000);
 		$('#scale-slide').attr('min', scalerMin);
 		
 		this.buildGrid();
@@ -81,3 +81,69 @@ var workTable = {
 
 	}
 }
+
+
+
+// ___________________________________________________________________________ TESTS!!!!
+
+var testDrag = Draggable.create($(".test-thang"), {
+			bounds: $('.work-table'),
+			liveSnap: {
+				x: function(endValue) {
+					var grids = workTable.sizes.gridSpacing;
+					return Math.round(endValue / grids) * grids;
+				},
+				y: function(endValue) {
+					var grids = workTable.sizes.gridSpacing;
+					return Math.round(endValue / grids) * grids;
+				}
+			},
+			onDrag: function() {
+				(thisCntrl).css({
+								'border': '1px dotted #FF0066'
+							});
+
+				// ________________________________________________________ highlighting grid on drag
+				console.log($(this))
+				var thisTop = Math.floor($(this.target).find('.cntrl').offset().top)
+				var thisLeft = Math.floor($(this.target).find('.cntrl').offset().left)
+
+				console.log('top: ' + thisTop + '   left: ' + thisLeft);
+				
+				var gridColumn = $('.work-table-column');
+				var gridRow = $('.work-table-row');
+
+				var currentColumn = "";
+				var currentRow = "";
+
+				for (var i = 0; i < gridColumn.length; i++) {
+					if(thisLeft > ((gridColumn.eq(i).offset().left) - 5) && thisLeft < ((gridColumn.eq(i).offset().left) + 5)) {
+						console.log('this column index: ' + i );
+						currentColumn = i;
+					}
+					gridColumn.css('border', '');
+				}
+				gridColumn.eq(currentColumn).css('border-left', '2px dotted gray');
+
+				
+				for (var i = 0; i < gridRow.length; i++) {
+					if(thisTop > ((gridRow.eq(i).offset().top) - 5) && thisTop < ((gridRow.eq(i).offset().top) + 5)) {
+						console.log('this row index: ' + i);
+						currentRow = i;
+					}
+					gridRow.css('border', '');
+				}
+				gridRow.eq(currentRow).css('border-top', '2px dotted gray');
+
+			},
+			onRelease: function() {
+				(thisCntrl).css('border', '');
+				$('.work-table-row, .work-table-column').css('border', '');
+				controlDrag[0].kill();
+				controlDrag = '';
+			},	
+		});
+
+
+
+
