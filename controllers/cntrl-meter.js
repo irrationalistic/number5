@@ -1,4 +1,4 @@
-console.log('cntrl-meter start');
+
 
 var Meter = {
 	create: function() {
@@ -35,6 +35,6 @@ Meter.prototype.constructor = Meter;
 
 
 
-console.log('-- cntrl-meter END');
+
 
 

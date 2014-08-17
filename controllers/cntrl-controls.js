@@ -1,12 +1,12 @@
-console.log('cntrl-controls start');
-	
+
 
 var Controls = function() {
 	var cntrlSelf = this;
+	
 	this.dragTarget = function() {
-		this.$el.find('.cntrl-grip').on('mousedown', function() {
-			var self = $(this);
-			cntrlSelf.dragCntrl(self);
+		$(document).on('mousedown','.cntrl-grip', function() {
+			
+			cntrlSelf.dragCntrl($(this));
 		});
 	};
 
@@ -32,6 +32,7 @@ var Controls = function() {
 
 	this.featureSizing = function() {
 		var parentBoxWidth = this.$el.width();
+		console.log(this.$el);
 		var parentBoxHeight = this.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
 		// console.log('cntrl box width: ' + cntrlBoxWidth);
@@ -92,8 +93,13 @@ var Controls = function() {
 			},
 			onDrag: function() {
 				// ____________________________________________ Change parents form Frame to Work-table
-				
+				console.log(thisCntrl);
+				thisCntrl.appendTo('.work-table').removeClass('cntrl-jystk-menu');
+				console.log(thisCntrl);
 
+
+				cntrlSelf.featureSizing();
+				cntrlSelf.boundsboundsStyleAndSize();
 
 
 
@@ -103,11 +109,10 @@ var Controls = function() {
 							});
 
 				// ________________________________________________________ highlighting grid on drag
-				// console.log($(this))
 				var thisTop = Math.floor($(this.target).offset().top)
 				var thisLeft = Math.floor($(this.target).offset().left)
 
-				console.log('top: ' + thisTop + '   left: ' + thisLeft);
+				console.log('cntrl top: ' + thisTop + '   cntrl left: ' + thisLeft);
 				
 				var gridColumn = $('.work-table-column');
 				var gridRow = $('.work-table-row');
@@ -138,8 +143,8 @@ var Controls = function() {
 			onRelease: function() {
 				(thisCntrl).css('border', '');
 				$('.work-table-row, .work-table-column').css('border', '');
-				// controlDrag[0].kill();
-				// controlDrag = '';
+				controlDrag[0].kill();
+				controlDrag = '';
 			},	
 		});
 	};
@@ -154,7 +159,3 @@ var Controls = function() {
 
 
 
-
-
-
-console.log('-- cntrl-controls END');

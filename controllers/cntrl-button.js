@@ -1,4 +1,3 @@
-console.log('cntrl-button start');
 
 var Bttn = {
 	create: function() {
@@ -38,5 +37,3 @@ Bttn.prototype = new Controls;
 Bttn.prototype.constructor = Bttn;
 
 
-
-console.log('-- cntrl-button END');

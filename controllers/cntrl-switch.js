@@ -1,4 +1,4 @@
-console.log('cntrl-switch start');
+
 
 var Switch = {
 	create: function() {
@@ -37,5 +37,5 @@ Switch.prototype.constructor = Switch;
 
 
 
-console.log('-- cntrl-switch END');
+
 

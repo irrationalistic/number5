@@ -1,4 +1,5 @@
-console.log('cntrl-mixer start');
+
+
 // ________________________________________________________ MIXER TEMPLATE
 var cntrlMixerTemplate = 
 $(	"<div class='mixer'>" +
@@ -81,5 +82,5 @@ $(document).on('click', '.big-stream', function() {
 
 
 
-console.log('-- cntrl-mixer END');
+
 

@@ -1,4 +1,4 @@
-console.log('workspace start');
+
 
 
 // ______________________________________________________________________ work table and grid
@@ -161,4 +161,3 @@ var workTable = {
 
 
 
-console.log('-- workspace END');

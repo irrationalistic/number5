@@ -1,4 +1,4 @@
-console.log('cntrl-knob start');
+
 
 var Knob = {
 	create: function() {
@@ -38,6 +38,6 @@ Knob.prototype.constructor = Knob;
 
 
 
-console.log('-- cntrl-knob END');
+
 
 

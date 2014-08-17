@@ -1,4 +1,3 @@
-console.log('cntrl-joystick start');
 
 
 // _________________________________________________________________ JOYSTICK OBJECT	
@@ -17,7 +16,7 @@ var Joystick = function() {
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
 	this.joystickTemplate = $(
-		"<div class='cntrl cntrl-jystk-menu cntrl-jytsk'>" +
+		"<div class='cntrl cntrl-jystk-menu cntrl-jystk'>" +
 			"<div class='cntrl-box'>" +
 				"<div class='jystk-bounds'>" +
 					"<div class='jystk'>" +
@@ -136,6 +135,3 @@ Joystick.prototype.constructor = Joystick;
 
 // ________________________________________ END JOYSTICK CONSTRUCTOR
 
-
-
-console.log('-- cntrl-joystick END');
