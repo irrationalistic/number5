@@ -2,7 +2,7 @@
 
 .cntrl {
 	position: absolute;
-	border: 1px dotted chartreuse;
+	/*border: 1px dotted chartreuse;*/
 	border-radius: 8px;
 	height: 100%;
 	width: 100%;
@@ -86,9 +86,9 @@
 
 }
 
-.cntrl:hover {
+/*.cntrl:hover {
 	background-color: white;
-}
+}*/
 
 
 

@@ -34,7 +34,9 @@ var Controls = function() {
 		var parentBoxWidth = this.$el.width();
 		var parentBoxHeight = this.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
+		// console.log('cntrl box width: ' + cntrlBoxWidth);
 		var cntrlBoxHeight = parentBoxHeight - (workTable.sizes.cellSize * 3);
+		// console.log('cntrl box height: ' + cntrlBoxHeight);
 
 		var statusLightOffset = cntrlBoxWidth * 0.1;
 		this.$el.find('.status-light').css({
@@ -44,8 +46,11 @@ var Controls = function() {
 								'height': statusLightOffset,
 								});
 		var cntrlGripWidth = cntrlBoxWidth * 0.2;
+		// console.log('cntrl grip width: ' + cntrlGripWidth);
 		var cntrlGripHeight = cntrlBoxWidth * 0.12;
-		this.$el.find('.cntrl-grip').css({
+		// console.log('cntrl grip height: ' + cntrlGripHeight);
+
+		this.$el.find('.cntrl-box').find('.cntrl-grip').css({
 								'top': statusLightOffset,
 								'right': statusLightOffset,
 								'width': cntrlGripWidth,
@@ -71,7 +76,7 @@ var Controls = function() {
 	}
 		
 	this.dragCntrl = function(self) {
-		var thisCntrl = self.closest('.cntrl');
+		var thisCntrl = self.closest('.cntrl')
 		var controlDrag = '';
 		controlDrag = Draggable.create(thisCntrl, {
 			bounds: $('.work-table'),
@@ -86,14 +91,21 @@ var Controls = function() {
 				}
 			},
 			onDrag: function() {
+				// ____________________________________________ Change parents form Frame to Work-table
+				
+
+
+
+
+				// _________________________________________________ Highlight '.cntrl' border on drag
 				(thisCntrl).css({
 								'border': '1px dotted #FF0066'
 							});
 
 				// ________________________________________________________ highlighting grid on drag
 				// console.log($(this))
-				var thisTop = Math.floor($(this.target).find('.cntrl').offset().top)
-				var thisLeft = Math.floor($(this.target).find('.cntrl').offset().left)
+				var thisTop = Math.floor($(this.target).offset().top)
+				var thisLeft = Math.floor($(this.target).offset().left)
 
 				console.log('top: ' + thisTop + '   left: ' + thisLeft);
 				
@@ -126,8 +138,8 @@ var Controls = function() {
 			onRelease: function() {
 				(thisCntrl).css('border', '');
 				$('.work-table-row, .work-table-column').css('border', '');
-				controlDrag[0].kill();
-				controlDrag = '';
+				// controlDrag[0].kill();
+				// controlDrag = '';
 			},	
 		});
 	};

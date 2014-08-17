@@ -45,7 +45,7 @@ body {
 	right: 0;
 	z-index: 3001;
 	color: rgb(166, 74, 45);
-	font-family: AndaleMono;
+	font-family: AndaleMono, Lucida Sans Unicode;
 	background-color: rgba(210, 210, 208, 1);
 	box-shadow: 0 0 10px 6px rgba(15, 15, 15, 0.6);
 	border-radius: 15px;

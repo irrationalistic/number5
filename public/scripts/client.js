@@ -37,7 +37,6 @@ $(document).on('ready', function() {
 		// console.log('hey');
 	})
 
-
 // ____________________________________________________________ END OF DOC ON
 })
 
