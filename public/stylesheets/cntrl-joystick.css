@@ -39,6 +39,12 @@
 
 /*___________________________________*/
 .cntrl-jystk-menu {
-	height: 80%;
-	width: 64%;
+	margin-left: 10%;
+	height: 100%;
+	width: 80%;
+	padding-top: 12%;
+}
+
+.cntrl-jystk-menu .cntrl-antenna, .cntrl-jystk-menu .cntrl-label {
+	display: none;
 }

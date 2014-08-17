@@ -2,6 +2,13 @@ console.log('cntrl-controls start');
 	
 
 var Controls = function() {
+	var cntrlSelf = this;
+	this.dragTarget = function() {
+		this.$el.find('.cntrl-grip').on('mousedown', function() {
+			var self = $(this);
+			cntrlSelf.dragCntrl(self);
+		});
+	};
 
 	this.features = function() {
 		return $(
@@ -23,15 +30,45 @@ var Controls = function() {
 				);
 	};
 
-	this.cntrlInteriorSizes = function() {
-	$('.cntrl').css({
-					'padding-top': workTable.sizes.cellSize * 2
-					});
-	$('.cntrl-box').css({
-						'width':  cntrlBoxWidth + 'px',
-						'height': cntrlBoxHeight + 'px'
-						});
-	};
+	this.featureSizing = function() {
+		var parentBoxWidth = this.$el.width();
+		var parentBoxHeight = this.$el.height();
+		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
+		var cntrlBoxHeight = parentBoxHeight - (workTable.sizes.cellSize * 3);
+
+		var statusLightOffset = cntrlBoxWidth * 0.1;
+		this.$el.find('.status-light').css({
+								'top': statusLightOffset,
+								'left': statusLightOffset,
+								'width': statusLightOffset,
+								'height': statusLightOffset,
+								});
+		var cntrlGripWidth = cntrlBoxWidth * 0.2;
+		var cntrlGripHeight = cntrlBoxWidth * 0.12;
+		this.$el.find('.cntrl-grip').css({
+								'top': statusLightOffset,
+								'right': statusLightOffset,
+								'width': cntrlGripWidth,
+								'height': cntrlGripHeight,
+							});
+
+		var cntrlAntennaSize = cntrlBoxWidth * 0.1;
+		this.$el.find('.cntrl-antenna').css({
+								'width': cntrlAntennaSize,
+								'height': cntrlAntennaSize,
+								'top': -(workTable.sizes.cellSize * 1.8),
+								'left': workTable.sizes.cellSize
+								});
+		this.$el.find('.cntrl-antenna-stalk').css({
+										'height': workTable.sizes.cellSize * 1.5
+										});
+		this.$el.find('.cntrl-antenna-lg-plate').css({
+											'width': workTable.sizes.cellSize * 1.8
+											});
+		this.$el.find('.cntrl-antenna-dot').css({
+									'left': workTable.sizes.cellSize * 1,
+									});
+	}
 		
 	this.dragCntrl = function(self) {
 		var thisCntrl = self.closest('.cntrl');
@@ -54,7 +91,7 @@ var Controls = function() {
 							});
 
 				// ________________________________________________________ highlighting grid on drag
-				console.log($(this))
+				// console.log($(this))
 				var thisTop = Math.floor($(this.target).find('.cntrl').offset().top)
 				var thisLeft = Math.floor($(this.target).find('.cntrl').offset().left)
 

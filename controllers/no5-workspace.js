@@ -52,15 +52,11 @@ var workTable = {
 			left: 0.00000
 		});
 
-		var scalerText = function() {
-			$('#scale-text').text(Math.round(($('#scale-slide').val() * 100)) + '%');
+		
+		$('#scale-text').text(Math.round(($('#scale-slide').val() * 100)) + '%');
 
-		}();
-
-		var squareMenuHolders = function() {
-			var controlHolderWidth = $('.control-holder').width();
-			$('.control-holder').css('height', controlHolderWidth);		
-		}();
+		var controlHolderWidth = $('.control-holder').width();
+		$('.control-holder').css('height', controlHolderWidth);
 
 	},
 

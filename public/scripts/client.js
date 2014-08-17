@@ -25,10 +25,10 @@ $(document).on('ready', function() {
 	
 	// ________________________________________________________ Draggable for controls
 	
-	$('.cntrl-grip').on('mousedown', function() {
-		var self = $(this);
-		cntrl.dragCntrl(self);
-	});
+	// $('.cntrl-grip').on('mousedown', function() {
+	// 	var self = $(this);
+	// 	cntrl.dragCntrl(self);
+	// });
 
 	// ________________________________________________________ context Menu
 	$(document).on('contextmenu', function(e) {

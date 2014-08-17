@@ -9,7 +9,10 @@ var Joystick = function() {
 		// console.log('control test: ' + Controls);
 		this.$el = self.joystickTemplate;
 		this.$el.appendTo($('#joystick-holder'));
-		this.$el.append(this.features());
+		this.$el.find('.cntrl-box').append(this.features());
+		this.boundsStyleAndSize();
+		this.featureSizing();
+		this.dragTarget();
 	};
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
@@ -27,6 +30,11 @@ var Joystick = function() {
 
 	// ______________________________________________________ JOYSTICK BOUNDS
 	this.boundsStyleAndSize = function() {
+		var parentBoxWidth = this.$el.width();
+		var parentBoxHeight = this.$el.height();
+		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
+		var cntrlBoxHeight = parentBoxHeight - (workTable.sizes.cellSize * 3);
+
 		var boundsSize = Math.ceil(cntrlBoxWidth * 0.88);
 		if(boundsSize % 2 != 0) {
 			boundsSize --
@@ -35,17 +43,17 @@ var Joystick = function() {
 		var jystkStyleSize = jystkSize * 0.80;
 		var jystkCenteringOffset = (boundsSize - jystkSize) / 2;
 
-		$('.jystk-bounds').css({
+		this.$el.find('.jystk-bounds').css({
 								'width': boundsSize + 'px',
 								'height': boundsSize + 'px'
 								});		
-		$('.jystk').css({	
+		this.$el.find('.jystk').css({	
 							'width': jystkSize + 'px',
 							'height': jystkSize + 'px',
 							'top': jystkCenteringOffset,
 							'left': jystkCenteringOffset
 						});
-		$('.jystk-style').css({
+		this.$el.find('.jystk-style').css({
 								'width': jystkStyleSize + 'px',
 								'height': jystkStyleSize + 'px'
 								});
@@ -126,7 +134,7 @@ var Joystick = function() {
 Joystick.prototype = new Controls();
 Joystick.prototype.constructor = Joystick;
 
-// __________________________________________________ END JOYSTICK CONSTRUCTOR
+// ________________________________________ END JOYSTICK CONSTRUCTOR
 
 
 
