@@ -1,8 +1,9 @@
 
 /*________________________________________________ joystick */
 .cntrl-jystk {
-	height: 12.5%;
+	height: 13.888%;
 	width: 10%;
+	padding-top: 36px;
 }
 
 .jystk-bounds {
@@ -37,7 +38,7 @@
 }
 
 
-/*___________________________________*/
+
 .cntrl-jystk-menu {
 	margin-left: 10%;
 	height: 100%;

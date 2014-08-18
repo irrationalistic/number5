@@ -54,25 +54,25 @@ $('.info-stream').css({
 
 //_______________________________________________________ zoom in on mixer data
 $(document).on('click', '.info-stream', function() {
-	$(this).css({
-				'width': workTable.sizes.gridSpacing * 3,
-				'height': workTable.sizes.gridSpacing * 4,
-				'top': workTable.sizes.cellSize * 2,
-				'font-size': '12px'
-				})
+	// $(this).css({
+	// 			'width': workTable.sizes.gridSpacing * 3,
+	// 			'height': workTable.sizes.gridSpacing * 4,
+	// 			'top': workTable.sizes.cellSize * 2,
+	// 			'font-size': '12px'
+	// 			})
 	$(this).addClass('big-stream');
 });
 
 $(document).on('click', '.big-stream', function() {
 	console.log('wtf');
-	$(this).css({
-				'font-size': '6px',
-				'width': workTable.sizes.cellSize * 4,
-				'height': workTable.sizes.cellSize * 4,
-				'top': '',
-				'bottom': workTable.sizes.cellSize,
-				'left': workTable.sizes.cellSize * 2,
-			});
+	// $(this).css({
+	// 			'font-size': '6px',
+	// 			'width': workTable.sizes.cellSize * 4,
+	// 			'height': workTable.sizes.cellSize * 4,
+	// 			'top': '',
+	// 			'bottom': workTable.sizes.cellSize,
+	// 			'left': workTable.sizes.cellSize * 2,
+	// 		});
 	$(this).removeClass('big-stream');
 })
 

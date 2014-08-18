@@ -32,7 +32,6 @@ var Controls = function() {
 
 	this.featureSizing = function() {
 		var parentBoxWidth = this.$el.width();
-		console.log(this.$el);
 		var parentBoxHeight = this.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
 		// console.log('cntrl box width: ' + cntrlBoxWidth);
