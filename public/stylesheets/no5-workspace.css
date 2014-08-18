@@ -76,14 +76,14 @@
 }
 
 .work-table-column {
-	border-left: 1px dotted rgb(20, 20, 20);
+	/*border-left: 1px dotted rgb(20, 20, 20);*/
 	position: absolute;
 	height: 100%;
 	top: 0;
 }
 
 .work-table-row {
-	border-top: 1px dotted rgb(20, 20, 20);
+	/*border-top: 1px dotted rgb(20, 20, 20);*/
 	position: absolute;
 	width: 100%;
 	left: 0;

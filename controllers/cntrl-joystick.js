@@ -14,6 +14,7 @@ var Joystick = function() {
 		this.boundsStyleAndSize();
 		this.featureSizing();
 		this.dragTarget();
+		this.moveStick();
 	};
 
 	// _________________________________________________________________ JOYSTICK TEMPLATE
@@ -31,8 +32,9 @@ var Joystick = function() {
 
 	// ______________________________________________________ JOYSTICK BOUNDS
 	this.boundsStyleAndSize = function() {
-		var parentBoxWidth = this.$el.width();
-		var parentBoxHeight = this.$el.height();
+		console.log("boundsStyleAndSize:", 'is happening!')
+		var parentBoxWidth = self.$el.width();
+		var parentBoxHeight = self.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
 		var cntrlBoxHeight = parentBoxHeight - (workTable.sizes.cellSize * 3);
 
@@ -76,15 +78,15 @@ var Joystick = function() {
 
 	// _______________________________________________________ DRAGGABLE
 	this.moveStick = function() {
-		Draggable.create($('.jystk'), {
+		Draggable.create(self.$el.find('.jystk'), {
 			type:'x,y',
-			bounds: $('.jystk-bounds'),
+			bounds: self.$el.find('.jystk-bounds'),
 			dragResistance: 0.25,
 			onPress: function() {
 				var changeX = Math.round((this.x / this.maxX) * 100);
 				var changeY = Math.round(-(this.y / this.maxY) * 100);
 				
-				infoStreamText(changeX, changeY);
+				self.infoStreamText(changeX, changeY);
 			},
 			onDrag: function() {
 				// console.log('min x: ' + this.minX + '   min y: ' + this.minY + '   max x: ' + this.maxX + '   max y: ' + this.maxY);
@@ -92,39 +94,39 @@ var Joystick = function() {
 				var changeX = Math.round((this.x / this.maxX) * 100);
 				var changeY = Math.round(-(this.y / this.maxY) * 100);
 				
-				infoStreamText(changeX, changeY);
+				self.infoStreamText(changeX, changeY);
 
-				$('.status-light').css({
+				self.$el.find('.status-light').css({
 										'background-color': 'rgb(255, 0, 0)',
 										'box-shadow': '0 0 3px 2px rgba(250, 10, 0, 0.6)',
 										'border': 'none'
 										});
-				$('.cntrl-antenna *').css({
+				self.$el.find('.cntrl-antenna *').css({
 											'background-color': 'orange',
 											'box-shadow': '0 0 3px 2px rgba(255, 215, 0, 0.2)'
 											});
 			},
 			onDragEnd: function() {
-				bounceBack();
-				$('.status-light').css({
+				self.bounceBack();
+				self.$el.find('.status-light').css({
 										'background-color': 'rgb(80, 0, 0)',
 										'box-shadow': '',
 										'border': '1px solid rgba(20, 20, 20, 0.8)'
 										});
-				$('.cntrl-antenna *').css({
+				self.$el.find('.cntrl-antenna *').css({
 											'background-color': 'black',
 											'box-shadow': ''
 											});
 				var changeX = Math.round((this.x / this.maxX) * 100);
 				var changeY = Math.round(-(this.y / this.maxY) * 100);
 				
-				infoStreamText(changeX, changeY);
+				self.infoStreamText(changeX, changeY);
 			},
 			onRelease: function() {
 				var changeX = Math.round((this.x / this.maxX) * 100);
 				var changeY = Math.round(-(this.y / this.maxY) * 100);
 				
-				infoStreamText(changeX, changeY);
+				self.infoStreamText(changeX, changeY);
 			}
 		});
 	};

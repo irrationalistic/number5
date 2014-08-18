@@ -4,9 +4,8 @@ var Controls = function() {
 	var cntrlSelf = this;
 	
 	this.dragTarget = function() {
-		$(document).on('mousedown','.cntrl-grip', function() {
-			
-			cntrlSelf.dragCntrl($(this));
+		this.$el.find('.cntrl-grip, .cntrl-grip-whole').on('mousedown', function() {
+			cntrlSelf.dragCntrl();
 		});
 	};
 
@@ -26,12 +25,14 @@ var Controls = function() {
 
 					"<div class='cntrl-label'>" +
 						"<input type='text' placeholder='Control Label'>" +
-					"</div>"
+					"</div>" +
+
+					"<div class='cntrl-grip-whole'></div>"
 				);
 	};
 
 	this.featureSizing = function() {
-		console.log(self);
+		console.log(this.$el);
 		var parentBoxWidth = this.$el.width();
 		var parentBoxHeight = this.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
@@ -77,7 +78,9 @@ var Controls = function() {
 	}
 		
 	this.dragCntrl = function(self) {
-		var thisCntrl = self.closest('.cntrl')
+		// var thisCntrl = cntrlSelf.closest('.cntrl')
+		var thisCntrl = cntrlSelf.$el;
+		console.log("thisCntrl:", thisCntrl);
 		var controlDrag = '';
 		controlDrag = Draggable.create(thisCntrl, {
 			bounds: $('.work-table'),
@@ -94,13 +97,13 @@ var Controls = function() {
 			onDrag: function() {
 				// ____________________________________________ Change 
 
-				thisCntrl.appendTo('.work-table');
+				thisCntrl.appendTo('.work-table').removeClass('cntrl-jystk-menu');
 
 
 				cntrlSelf.featureSizing();
 				// console.log(cntrlSelf);
 				// cntrlSelf.featureSizing.call(cntrlSelf);
-				// cntrlSelf.boundsboundsStyleAndSize();
+				cntrlSelf.boundsStyleAndSize();
 
 
 				// _________________________________________________ Highlight '.cntrl' border on drag
@@ -142,6 +145,7 @@ var Controls = function() {
 			},
 			onRelease: function() {
 				(thisCntrl).css('border', '');
+				thisCntrl.find('.cntrl-grip-whole').hide();
 				$('.work-table-row, .work-table-column').css('border', '');
 				controlDrag[0].kill();
 				controlDrag = '';
