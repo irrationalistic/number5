@@ -31,6 +31,7 @@ var Controls = function() {
 	};
 
 	this.featureSizing = function() {
+		console.log(self);
 		var parentBoxWidth = this.$el.width();
 		var parentBoxHeight = this.$el.height();
 		var cntrlBoxWidth = parentBoxWidth - (workTable.sizes.cellSize * 2);
@@ -45,9 +46,9 @@ var Controls = function() {
 								'width': statusLightOffset,
 								'height': statusLightOffset,
 								});
-		var cntrlGripWidth = cntrlBoxWidth * 0.2;
+		var cntrlGripWidth = cntrlBoxWidth * 0.45;
 		// console.log('cntrl grip width: ' + cntrlGripWidth);
-		var cntrlGripHeight = cntrlBoxWidth * 0.12;
+		var cntrlGripHeight = cntrlBoxWidth * 0.20;
 		// console.log('cntrl grip height: ' + cntrlGripHeight);
 
 		this.$el.find('.cntrl-box').find('.cntrl-grip').css({
@@ -91,15 +92,15 @@ var Controls = function() {
 				}
 			},
 			onDrag: function() {
-				// ____________________________________________ Change parents form Frame to Work-table
-				console.log(thisCntrl);
-				thisCntrl.appendTo('.work-table').removeClass('cntrl-jystk-menu');
-				console.log(thisCntrl);
+				// ____________________________________________ Change 
+
+				thisCntrl.appendTo('.work-table');
 
 
 				cntrlSelf.featureSizing();
-				cntrlSelf.boundsboundsStyleAndSize();
-
+				// console.log(cntrlSelf);
+				// cntrlSelf.featureSizing.call(cntrlSelf);
+				// cntrlSelf.boundsboundsStyleAndSize();
 
 
 				// _________________________________________________ Highlight '.cntrl' border on drag

@@ -3,7 +3,7 @@
 .cntrl-jystk {
 	height: 13.888%;
 	width: 10%;
-	padding-top: 36px;
+	padding-top: 50px;
 }
 
 .jystk-bounds {
@@ -49,3 +49,9 @@
 .cntrl-jystk-menu .cntrl-antenna, .cntrl-jystk-menu .cntrl-label {
 	display: none;
 }
+
+
+
+
+
+

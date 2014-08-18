@@ -3,12 +3,14 @@
 // _________________________________________________________________ JOYSTICK OBJECT	
 var Joystick = function() {
 	var self = this;
+
+
 	this.create = function() {
-		Controls.call();
+		Controls.call(this);
 		// console.log('control test: ' + Controls);
 		this.$el = self.joystickTemplate;
 		this.$el.appendTo($('#joystick-holder'));
-		this.$el.find('.cntrl-box').append(this.features());
+		this.$el.find('.cntrl-box').append(this.features()).removeClass('cntrl-jystk-menu');
 		this.boundsStyleAndSize();
 		this.featureSizing();
 		this.dragTarget();
